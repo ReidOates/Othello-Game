@@ -1,0 +1,407 @@
+/**
+ * animations.css
+ * ===============
+ * Semua animations dan transitions untuk UI.
+ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PULSE ANIMATION
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HIGHLIGHT ANIMATION
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes highlight {
+  0% {
+    background: rgba(0, 212, 255, 0);
+  }
+  50% {
+    background: rgba(0, 212, 255, 0.3);
+  }
+  100% {
+    background: rgba(0, 212, 255, 0);
+  }
+}
+
+.highlight {
+  animation: highlight 0.5s ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SPIN ANIMATION
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FLIP ANIMATION (DISC)
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: rotateY(90deg) scale(0.8);
+  }
+  100% {
+    transform: rotateY(180deg) scale(1);
+  }
+}
+
+@keyframes flip3d {
+  0% {
+    transform: perspective(1000px) rotateY(0);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(180deg);
+  }
+}
+
+.flip-disc {
+  animation: flip3d 0.4s ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FADE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+.fade-out-down {
+  animation: fadeOutDown 0.3s ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SCALE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.scale-out {
+  animation: scaleOut 0.3s ease-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SLIDE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.3s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.3s ease-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BOUNCE ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.bounce-in {
+  animation: bounceIn 0.5s ease-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLOW ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+  }
+}
+
+@keyframes glowError {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+  }
+}
+
+@keyframes glowSuccess {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 200, 150, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 200, 150, 0.8);
+  }
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.glow-error {
+  animation: glowError 2s ease-in-out infinite;
+}
+
+.glow-success {
+  animation: glowSuccess 2s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LOADING ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes dotBlink {
+  0%, 20%, 50%, 80%, 100% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 0),
+    rgba(0, 212, 255, 0.2),
+    rgba(0, 212, 255, 0)
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.dot-blink {
+  animation: dotBlink 1.4s infinite;
+}
+
+.dot-blink:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-blink:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TRANSITION UTILITIES
+   ───────────────────────────────────────────────────────────────────────── */
+
+.transition {
+  transition: all 0.3s ease;
+}
+
+.transition-fast {
+  transition: all 0.1s ease;
+}
+
+.transition-slow {
+  transition: all 0.5s ease;
+}
+
+.transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DELAY UTILITIES
+   ───────────────────────────────────────────────────────────────────────── */
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-1000 { animation-delay: 1s; }

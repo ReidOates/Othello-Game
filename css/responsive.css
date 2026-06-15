@@ -1,0 +1,449 @@
+/**
+ * responsive.css
+ * ===============
+ * Responsive design untuk desktop, tablet, mobile.
+ * Breakpoints: 
+ *   - Desktop: 1024px+
+ *   - Tablet: 768px - 1023px
+ *   - Mobile: < 768px
+ */
+
+/* ═════════════════════════════════════════════════════════════════════════
+   DESKTOP (1024px+) - DEFAULT
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/* Already defined in style.css */
+
+/* ═════════════════════════════════════════════════════════════════════════
+   TABLET (768px - 1023px)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .main-container {
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .side-panels {
+    flex-basis: 300px;
+  }
+
+  .panel {
+    padding: var(--spacing-md);
+  }
+
+  #board, #game-board-canvas {
+    max-width: 400px;
+  }
+
+  .stats-table {
+    font-size: var(--font-size-sm);
+  }
+
+  .stats-table td {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   MOBILE (< 768px)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  :root {
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --font-size-base: 13px;
+    --font-size-lg: 14px;
+    --font-size-xl: 16px;
+  }
+
+  html, body {
+    height: auto;
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     HEADER
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .app-header {
+    padding: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .header-left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo {
+    gap: var(--spacing-sm);
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     MAIN CONTAINER
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     BOARD AREA
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .board-area {
+    width: 100%;
+  }
+
+  #board, #game-board-canvas {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vw;
+  }
+
+  .board-container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .board-cell {
+    font-size: var(--font-size-sm);
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     SIDE PANELS
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .side-panels {
+    flex-direction: row;
+    flex-basis: 100%;
+    overflow-y: visible;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    /* Horizontal scroll */
+    white-space: nowrap;
+    gap: var(--spacing-md);
+  }
+
+  .panel {
+    flex: 0 0 85%;
+    padding: var(--spacing-md);
+    white-space: normal;
+  }
+
+  .panel h3 {
+    font-size: var(--font-size-base);
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     SETTINGS PANEL
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .setting-item {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .setting-select, .setting-checkbox {
+    padding: var(--spacing-sm) var(--spacing-xs);
+    font-size: var(--font-size-base);
+  }
+
+  .depth-control {
+    gap: var(--spacing-sm);
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     BUTTONS
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+  }
+
+  .button-group {
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .button-group .btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     STATS TABLE
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .stats-table {
+    font-size: 12px;
+  }
+
+  .stats-table td {
+    padding: var(--spacing-xs);
+  }
+
+  .stats-table .label {
+    font-size: 11px;
+  }
+
+  .stats-table .value {
+    font-size: 12px;
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     STATUS ITEMS
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .status-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .status-item .label {
+    font-size: var(--font-size-base);
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     TREE VISUALIZER
+     ──────────────────────────────────────────────────────────────────────── */
+
+  #tree-visualizer-svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* ───────────────────────────────────────────────────────────────────────
+     FOOTER
+     ──────────────────────────────────────────────────────────────────────── */
+
+  .app-footer {
+    padding: var(--spacing-md);
+    font-size: 12px;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   SMALL MOBILE (< 480px)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 479px) {
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --font-size-base: 12px;
+    --font-size-lg: 13px;
+  }
+
+  .logo-text {
+    font-size: var(--font-size-base);
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .panel {
+    padding: var(--spacing-md);
+  }
+
+  .panel h3 {
+    font-size: var(--font-size-base);
+  }
+
+  #board, #game-board-canvas {
+    max-width: 95vw;
+    max-height: 95vw;
+  }
+
+  .board-cell {
+    font-size: 10px;
+  }
+
+  .board-cell.valid-move::before {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* One column layout */
+  .side-panels {
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-direction: column;
+  }
+
+  .panel {
+    width: 100%;
+  }
+
+  .btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 12px;
+  }
+
+  .setting-select, .setting-checkbox {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   LANDSCAPE MODE (HEIGHT < 500px)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (max-height: 500px) {
+  .main-container {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .panel {
+    padding: var(--spacing-sm);
+  }
+
+  #board, #game-board-canvas {
+    max-height: 70vh;
+  }
+
+  .side-panels {
+    max-height: 70vh;
+  }
+
+  .app-header {
+    padding: var(--spacing-sm);
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   FOLD/TABLET LANDSCAPE (WIDTH 1024px - 1366px, HEIGHT < 768px)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (width >= 1024px) and (height < 768px) {
+  .main-container {
+    flex-direction: row;
+    height: calc(100vh - 80px);
+  }
+
+  .board-area {
+    flex: 1;
+  }
+
+  .side-panels {
+    flex-basis: 280px;
+    flex-direction: column;
+  }
+
+  #board, #game-board-canvas {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   SUPPORT FOR SAFE AREA (NOTCH DEVICES)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@supports (padding-left: max(0px)) {
+  .app-header {
+    padding-left: max(var(--spacing-lg), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-lg), env(safe-area-inset-right));
+  }
+
+  .main-container {
+    padding-left: max(var(--spacing-md), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-md), env(safe-area-inset-right));
+  }
+
+  .app-footer {
+    padding-left: max(var(--spacing-lg), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-lg), env(safe-area-inset-right));
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+  .app-header, .app-footer {
+    display: none;
+  }
+
+  .main-container {
+    padding: 0;
+    gap: 0;
+  }
+
+  .panel {
+    page-break-inside: avoid;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+
+  .btn {
+    display: none;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY - PREFERS REDUCED MOTION
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY - PREFERS DARK MODE
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    /* Use dark mode by default */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    /* Apply light mode */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-tertiary: #eeeeee;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: #dddddd;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Othello AI — Visualisasi Minimax & Alpha-Beta Pruning" />
+  <title>Othello AI — Minimax & Alpha-Beta Pruning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body class="dark-mode" data-theme="dark">
+
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="7" fill="#1a1a2e" stroke="var(--accent)" stroke-width="1.5" />
+          <circle cx="24" cy="8" r="7" fill="#f0f0f0" stroke="var(--accent)" stroke-width="1.5" />
+          <circle cx="8" cy="24" r="7" fill="#f0f0f0" stroke="var(--accent)" stroke-width="1.5" />
+          <circle cx="24" cy="24" r="7" fill="#1a1a2e" stroke="var(--accent)" stroke-width="1.5" />
+        </svg>
+        <span class="logo-text">Othello <span class="logo-accent">AI</span></span>
+      </div>
+      <span class="header-subtitle">Minimax &amp; Alpha-Beta Pruning Visualizer</span>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+        </svg>
+        <svg class="icon-sun hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="side-panels">
+      <div id="settings-panel-container"></div>
+    </div>
+
+    <section class="board-area">
+      <div id="board-container"></div>
+    </section>
+
+    <div class="side-panels">
+      <div id="status-panel-container"></div>
+      <div id="counter-panel-container"></div>
+    </div>
+  </main>
+
+  <!-- Section Tree disembunyikan secara default biar gak bikin glitch -->
+  <section class="tree-section" id="treeSection" style="padding: var(--spacing-lg); display: none;">
+    <div class="tree-section-header" style="margin-bottom: var(--spacing-md);">
+      <h2 class="tree-title" style="color: var(--text-primary);">Visualisasi Game Tree</h2>
+    </div>
+    <div id="tree-visualizer-container" style="overflow-x: auto; border-radius: var(--radius-md); min-height: 300px;">
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <p>Othello AI Game — Implementasi Minimax & Alpha-Beta Pruning | <a href="docs/algorithm-explanation.md"
+        style="color: var(--accent); text-decoration: none;">Algorithm Docs</a></p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
