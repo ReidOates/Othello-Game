@@ -34,7 +34,7 @@ Aplikasi ini berjalan murni di sisi klien (*Client-Side*) menggunakan Vanilla Ja
 
 1. **Clone repository ini**:
 ```bash
-   git clone [https://github.com/username/nama-repo-kamu.git](https://github.com/username/nama-repo-kamu.git)
+   git clone [https://github.com/ReidOates/adversarial-search-301240032.git](https://github.com/ReidOates/adversarial-search-301240032.git)
 ```
 1. Buka folder project.
 
